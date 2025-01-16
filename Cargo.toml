@@ -1,0 +1,11 @@
+[package]
+    description = "Cloudflare WARP+ keys collector."
+    edition     = "2021"
+    name        = "warpx"
+    version     = "0.1.0"
+
+[dependencies]
+    rand      = "0.8"
+    regex     = "1"
+    thiserror = "2"
+    ureq      = "2"
