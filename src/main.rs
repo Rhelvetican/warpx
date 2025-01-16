@@ -42,9 +42,9 @@ fn main() -> Result<(), Box<dyn Error>> {
             if let Some(key) = keys.choose(&mut rng) {
                 if written.insert(key) {
                     writeln!(&mut full, "{}", key)?;
+                    cnt += 1;
                 }
             }
-            cnt += 1;
         }
 
         cnt = 0;
@@ -52,9 +52,9 @@ fn main() -> Result<(), Box<dyn Error>> {
             if let Some(key) = keys.choose(&mut rng) {
                 if written.insert(key) {
                     writeln!(&mut lite, "{}", key)?;
+                    cnt += 1;
                 }
             }
-            cnt += 1;
         }
     }
 
