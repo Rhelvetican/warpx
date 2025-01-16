@@ -10,13 +10,7 @@ use rand::{seq::SliceRandom, thread_rng};
 use regex::Regex;
 use ureq::Agent;
 
-static SOURCES: &[&str] = &[
-    "https://t.me/s/warpplus",
-    "https://t.me/s/warppluscn",
-    "https://t.me/s/warpPlusHome",
-    "https://t.me/s/warp_veyke",
-    "https://t.me/s/warp_key",
-];
+static SOURCES: &[&str] = &["https://t.me/s/warpplus", "https://t.me/s/warppluscn"];
 
 static PATTERN: LazyLock<Regex> =
     LazyLock::new(|| Regex::new(r"<code>([A-Za-z0-9-]+)<\/code>").unwrap());
