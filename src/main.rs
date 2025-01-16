@@ -37,8 +37,9 @@ fn main() -> Result<(), Box<dyn Error>> {
     let keys = keys.into_iter().collect::<Box<[String]>>();
     let mut written = HashSet::new();
     if keys.len() > 0 {
+        println!("Selecting keys...");
         let mut cnt = 0u8;
-        while cnt < 200 {
+        while cnt < 150 {
             if let Some(key) = keys.choose(&mut rng) {
                 if written.insert(key) {
                     writeln!(&mut full, "{}", key)?;
@@ -48,7 +49,8 @@ fn main() -> Result<(), Box<dyn Error>> {
         }
 
         cnt = 0;
-        while cnt < 50 {
+        written.clear();
+        while cnt < 75 {
             if let Some(key) = keys.choose(&mut rng) {
                 if written.insert(key) {
                     writeln!(&mut lite, "{}", key)?;
